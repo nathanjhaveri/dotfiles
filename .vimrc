@@ -1,4 +1,4 @@
-" Nathan's .vimrc file
+﻿" Nathan's .vimrc file
 
 " Basics so vim works
 set nocompatible
@@ -14,7 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set smarttab
-
+set list listchars=tab:→\ ,trail:·
 
 " Search options
 set incsearch
