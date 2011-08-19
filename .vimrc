@@ -25,3 +25,5 @@ set hlsearch
 " UI options 
 syntax on
 set ruler
+set number
+colorscheme slate
