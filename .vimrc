@@ -27,3 +27,6 @@ syntax on
 set ruler
 set number
 colorscheme slate
+
+" Look for tags in parent directories
+set tags=tags;/
