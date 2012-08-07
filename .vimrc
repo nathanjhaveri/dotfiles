@@ -3,6 +3,7 @@
 " Basics so vim works
 set nocompatible
 set backspace=2
+set acd
 " remove buffer of closed tabs
 set nohidden
 
