@@ -3,9 +3,9 @@
 " Basics so vim works
 set nocompatible
 set backspace=2
-set acd
-" remove buffer of closed tabs
-set nohidden
+set autochdir " automatically change current directory
+set nohidden  " remove buffer of closed tabs
+set paste     " sane pasting
 
 " Whitespace options
 set autoindent
@@ -27,7 +27,7 @@ set hlsearch
 syntax on
 set ruler
 set number
-colorscheme slate
+colorscheme desert
 
 " Look for tags in parent directories
 set tags=tags;/
