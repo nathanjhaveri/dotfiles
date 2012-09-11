@@ -5,7 +5,6 @@ set nocompatible
 set backspace=2
 set autochdir " automatically change current directory
 set nohidden  " remove buffer of closed tabs
-set paste     " sane pasting
 
 " Whitespace options
 set autoindent
