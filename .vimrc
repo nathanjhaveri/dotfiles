@@ -8,7 +8,7 @@ set nohidden  " remove buffer of closed tabs
 
 " Whitespace options
 set autoindent
-set smartindent
+filetype indent on
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -30,3 +30,7 @@ colorscheme desert
 
 " Look for tags in parent directories
 set tags=tags;/
+
+" Python breakpoint
+map <F9> <Esc>Oimport pdb; pdb.set_trace()<Esc>
+
