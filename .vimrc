@@ -34,3 +34,6 @@ set tags=tags;/
 " Python breakpoint
 map <F9> <Esc>Oimport pdb; pdb.set_trace()<Esc>
 
+" Remove trailing whitespace
+map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
