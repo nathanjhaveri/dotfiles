@@ -23,6 +23,9 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Allow gf to javascript files in node
+set suffixesadd+=.js,.jsx,.hbs
+
 " UI options
 syntax on
 set ruler
