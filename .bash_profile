@@ -12,6 +12,7 @@ GIT_PS1_SHOWCOLORHINTS=true
 PSQL_PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export GREP_OPTIONS='--color=auto'
+export CLICOLOR=1
 export NODE_ENV=development
 export GOPATH=$HOME/code/go
 export KAFKA_PATH=/Applications/kafka_2.10-0.8.2.1/bin
