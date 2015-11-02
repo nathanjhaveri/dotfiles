@@ -43,3 +43,4 @@ map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " xml/html node matching/jumping
 runtime macros/matchit.vim
 
+colo PaperColor
