@@ -1,5 +1,8 @@
 ﻿" Nathan's .vimrc file
 
+" Pathogen plugin manager
+execute pathogen#infect()
+
 " Basics so vim works
 set nocompatible
 set backspace=2
