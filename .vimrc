@@ -6,7 +6,7 @@ execute pathogen#infect()
 " Basics so vim works
 set nocompatible
 set backspace=2
-set autochdir " automatically change current directory
+"set autochdir " automatically change current directory
 set nohidden  " remove buffer of closed tabs
 filetype plugin on
 
