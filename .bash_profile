@@ -16,8 +16,9 @@ export CLICOLOR=1
 export NODE_ENV=development
 export GOPATH=$HOME/code/go
 export KAFKA_PATH=/Applications/kafka_2.10-0.8.2.1/bin
+export RUSTBIN=$HOME/.cargo/bin
 
-export PATH=$GIT_PATH:$PATH:$GOPATH:$PSQL_PATH:$KAFKA_PATH
+export PATH=$GIT_PATH:$PATH:$GOPATH:$PSQL_PATH:$KAFKA_PATH:$RUSTBIN
 source ~/git-completion.bash
 source ~/git-prompt.sh
 
@@ -33,3 +34,5 @@ source '/Users/nathanj/code/google-cloud-sdk/completion.bash.inc'
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 eval "$(docker-machine env default)"
+
+pushd ~/code/porch

@@ -28,6 +28,7 @@ set hlsearch
 
 " Allow gf to javascript files in node
 set suffixesadd+=.js,.jsx,.hbs
+set path+=$PWD/node_modules
 
 " UI options
 syntax on
@@ -47,3 +48,21 @@ map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 runtime macros/matchit.vim
 
 colo PaperColor
+let g:CommandTMaxFiles=50000
+
+"set hidden
+let g:racer_cmd = "/Users/nathanj/.cargo/bin/racer"
+let $RUST_SRC_PATH="/Users/nathanj/code/rust/rust/src"
+
+" swap files (.swp) in a common location
+" " // means use the file's full path
+set dir=~/.vim/_swap//
+"
+" " backup files (~) in a common location if possible
+set backup
+set backupdir=~/.vim/_backup/,~/tmp,.
+"
+" " turn on undo files, put them in a common location
+set undofile
+set undodir=~/.vim/_undo/
+
