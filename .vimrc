@@ -48,11 +48,8 @@ map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 runtime macros/matchit.vim
 
 colo PaperColor
-let g:CommandTMaxFiles=50000
 
 "set hidden
-let g:racer_cmd = "/Users/nathanj/.cargo/bin/racer"
-let $RUST_SRC_PATH="/Users/nathanj/code/rust/rust/src"
 
 " swap files (.swp) in a common location
 " " // means use the file's full path

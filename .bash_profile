@@ -2,12 +2,8 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-#vim keybindings
-#set -o vi
 
-alias vim='mvim -v'
 
-GIT_PATH=/usr/local/bin/git
 GIT_PS1_SHOWCOLORHINTS=true
 PSQL_PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin
 
