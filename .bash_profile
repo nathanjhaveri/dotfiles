@@ -2,10 +2,13 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/nathan/google-cloud-sdk/path.bash.inc'
 
+# The next line enables shell command completion for gcloud.
+source '/Users/nathan/google-cloud-sdk/completion.bash.inc'
 
 GIT_PS1_SHOWCOLORHINTS=true
-PSQL_PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
@@ -31,3 +34,4 @@ source '/Users/nathanj/code/google-cloud-sdk/completion.bash.inc'
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 pushd ~/code/porch
+
