@@ -13,8 +13,9 @@ export NODE_ENV=development
 export GOPATH=$HOME/code/go
 export KAFKA_PATH=/Applications/kafka_2.10-0.8.2.1/bin
 export RUSTBIN=$HOME/.cargo/bin
+REL_NODE_PATH=./node_modules/.bin
 
-export PATH=$GIT_PATH:$PATH:$GOPATH:$PSQL_PATH:$KAFKA_PATH:$RUSTBIN
+export PATH=$GIT_PATH:$PATH:$GOPATH:$PSQL_PATH:$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH
 source ~/git-completion.bash
 source ~/git-prompt.sh
 
