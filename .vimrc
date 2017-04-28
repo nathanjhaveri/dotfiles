@@ -1,8 +1,5 @@
 ﻿" Nathan's .vimrc file
 
-" Pathogen plugin manager
-execute pathogen#infect()
-
 " Basics so vim works
 set nocompatible
 set backspace=2
@@ -62,4 +59,7 @@ set backupdir=~/.vim/_backup/,~/tmp,.
 " " turn on undo files, put them in a common location
 set undofile
 set undodir=~/.vim/_undo/
+
+" Super annoying c-c does completion pausing vim workaround
+let g:omni_sql_no_default_maps = 1
 
