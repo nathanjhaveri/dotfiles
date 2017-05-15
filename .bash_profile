@@ -28,5 +28,5 @@ source '/Users/nathanj/code/google-cloud-sdk/completion.bash.inc'
 
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-pushd ~/code/porch
+pushd ~/code/
 
