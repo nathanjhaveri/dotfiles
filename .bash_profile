@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
+
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-GIT_PS1_SHOWCOLORHINTS=true
 
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
@@ -14,8 +15,9 @@ export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
 REL_NODE_PATH=./node_modules/.bin
 
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN
-source ~/git-completion.bash
-source ~/git-prompt.sh
+
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # For frontend build
 ulimit -S -n 4096
@@ -26,7 +28,8 @@ source '/Users/nathanj/code/google-cloud-sdk/path.bash.inc'
 # The next line enables bash completion for gcloud.
 source '/Users/nathanj/code/google-cloud-sdk/completion.bash.inc'
 
-export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+GIT_PS1_SHOWCOLORHINTS=true
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 pushd ~/code/
 
