@@ -10,7 +10,6 @@ REL_NODE_PATH=./node_modules/.bin
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN
 
 for f in \
-    '~/.bashrc' \
     '/usr/local/etc/bash_completion.d/git-prompt.sh'  \
     '/usr/local/etc/bash_completion.d/git-completion.bash' \
     '~/code/google-cloud-sdk/path.bash.inc' \
