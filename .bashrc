@@ -8,12 +8,13 @@ export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
 REL_NODE_PATH=./node_modules/.bin
 
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN
+echo "$USER"
 
 for f in \
-    '/usr/local/etc/bash_completion.d/git-prompt.sh'  \
-    '/usr/local/etc/bash_completion.d/git-completion.bash' \
-    '~/code/google-cloud-sdk/path.bash.inc' \
-    '~/code/google-cloud-sdk/completion.bash.inc'; do
+    "/usr/local/etc/bash_completion.d/git-prompt.sh"  \
+    "/usr/local/etc/bash_completion.d/git-completion.bash" \
+    "/Users/$USER/code/google-cloud-sdk/path.bash.inc" \
+    "/Users/$USER/code/google-cloud-sdk/completion.bash.inc"; do
     if [ -f $f ]; then
         echo "sourcing $f"
         source $f
