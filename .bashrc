@@ -21,7 +21,6 @@ for f in \
     fi
 done
 
-
 # For frontend build
 ulimit -S -n 4096
 
