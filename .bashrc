@@ -30,6 +30,5 @@ ulimit -S -n 4096
 GIT_PS1_SHOWCOLORHINTS=true
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 felog () { sudo bunyan -p '*' --color -l trace | less -R; }
 
