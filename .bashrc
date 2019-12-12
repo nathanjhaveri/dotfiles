@@ -29,8 +29,9 @@ done
 ulimit -S -n 4096
 
 GIT_PS1_SHOWCOLORHINTS=true
-PS1='$(__git_ps1 "(%s)")\$ '
+PS1='\w$(__git_ps1 "(%s)")\$ '
 
 felog () { sudo bunyan -p '*' --color -l trace | less -R; }
 porchpg () { docker run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:9.6; }
+bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
