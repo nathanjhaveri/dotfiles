@@ -31,7 +31,13 @@ ulimit -S -n 4096
 GIT_PS1_SHOWCOLORHINTS=true
 PS1='\w$(__git_ps1 "(%s)")\$ '
 
+# Unlimited history
+export HISTFILESIZE=
+export HISTSIZE=
+
 felog () { sudo bunyan -p '*' --color -l trace | less -R; }
-porchpg () { docker run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:9.6; }
+runporchpg () { docker run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:latest; }
+porchpg () { PGPASSWORD=porch123 psql -h localhost -p 5432 -U postgres; }
+runboolegdw () { docker run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
 bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
