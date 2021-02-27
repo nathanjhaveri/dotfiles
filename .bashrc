@@ -7,7 +7,7 @@ export KAFKA_PATH=/Applications/kafka_2.13-2.7.0/bin
 export RUSTBIN=$HOME/.cargo/bin
 export CHEFPATH=/opt/chefdk/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
-export EDITOR=nvim
+export EDITOR=vim
 REL_NODE_PATH=./node_modules/.bin
 
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN:$CHEFPATH
@@ -19,6 +19,10 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 for f in \
     "/usr/local/etc/bash_completion.d/git-prompt.sh"  \
     "/usr/local/etc/bash_completion.d/git-completion.bash" \
+    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh" \
+    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh" \
+    "/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh" \
+    "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash" \
     "/Users/$USER/code/psql-service-completion/psql-service-completion.bash" \
     "/Users/$USER/code/google-cloud-sdk/path.bash.inc" \
     "/Users/$USER/code/google-cloud-sdk/completion.bash.inc"; do
@@ -44,7 +48,6 @@ porchpg () { PGPASSWORD=porch123 psql -h localhost -p 5432 -U postgres; }
 runboolegdw () { podman run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
 bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -53,3 +56,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source "$HOME/.cargo/env"

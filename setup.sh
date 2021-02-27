@@ -5,6 +5,7 @@ mkdir -p ~/.config/
 
 ln -sf $HOME/code/dotfiles/.vim/ $HOME/.vim
 ln -sf $HOME/code/dotfiles/.bashrc $HOME/.bashrc
+ln -sf $HOME/code/dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/code/dotfiles/.psqlrc $HOME/.psqlrc
 ln -sf $HOME/code/dotfiles/.bash_profile $HOME/.bash_profile
 ln -sf $HOME/code/dotfiles/.vim/ $HOME/.config/nvim
