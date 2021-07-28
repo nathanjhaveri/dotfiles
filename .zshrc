@@ -19,6 +19,6 @@ for f in \
     fi
 done
 
-setopt PROMPT_SUBST ; PS1='%~$(__git_ps1 "(%s)")$'
+setopt PROMPT_SUBST ; PS1='%~$(__git_ps1 "(%s)")$ '
 
 
