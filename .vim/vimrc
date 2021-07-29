@@ -22,7 +22,7 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-set inccommand=nosplit
+" set inccommand=nosplit " neovim only
 nnoremap <C-P> :FuzzyOpen<CR>
 
 " Allow gf to javascript files in node
