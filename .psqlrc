@@ -1,3 +1,4 @@
 \x auto
 \setenv EDITOR nvim
+\set HISTFILE ~/.psql_history-:DBNAME
 

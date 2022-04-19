@@ -10,3 +10,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export ANDROID_SDK=/Users/nathanj/Library/Android/sdk
+export PATH=/Users/nathanj/Library/Android/sdk/platform-tools:$PATH

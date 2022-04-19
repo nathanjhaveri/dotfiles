@@ -3,7 +3,7 @@ export CLICOLOR=1
 export NODE_ENV=development
 export NODE_OPTIONS=--max_old_space_size=4096
 export GOPATH=$HOME/code/go
-export KAFKA_PATH=/Applications/kafka_2.10-0.8.2.1/bin
+export KAFKA_PATH=/Applications/kafka_2.13-2.7.0/bin
 export RUSTBIN=$HOME/.cargo/bin
 export CHEFPATH=/opt/chefdk/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -12,6 +12,9 @@ REL_NODE_PATH=./node_modules/.bin
 
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN:$CHEFPATH
 echo "$USER"
+
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 for f in \
     "/usr/local/etc/bash_completion.d/git-prompt.sh"  \
@@ -35,9 +38,18 @@ PS1='\w$(__git_ps1 "(%s)")\$ '
 export HISTFILESIZE=
 export HISTSIZE=
 
-felog () { sudo bunyan -p '*' --color -l trace | less -R; }
-runporchpg () { docker run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:latest; }
+felog () { sudo bunyan -p '*' --color -l trace; }
+runporchpg () { podman run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:latest; }
 porchpg () { PGPASSWORD=porch123 psql -h localhost -p 5432 -U postgres; }
-runboolegdw () { docker run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
+runboolegdw () { podman run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
 bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
