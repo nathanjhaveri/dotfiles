@@ -7,14 +7,15 @@ export KAFKA_PATH=/Applications/kafka_2.13-2.7.0/bin
 export RUSTBIN=$HOME/.cargo/bin
 export CHEFPATH=/opt/chefdk/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
-export EDITOR=vim
+export EDITOR=nvim
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 REL_NODE_PATH=./node_modules/.bin
 
 export PATH=$GIT_PATH:$PATH:$GOPATH::$KAFKA_PATH:$RUSTBIN:$REL_NODE_PATH:$PGBIN:$CHEFPATH
 echo "$USER"
 
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_202)
 
 for f in \
     "/usr/local/etc/bash_completion.d/git-prompt.sh"  \
@@ -43,9 +44,9 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 felog () { sudo bunyan -p '*' --color -l trace; }
-runporchpg () { podman run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:latest; }
+runporchpg () { docker run --rm -ti --name porchpg -p 5432:5432 gcr.io/porch-gcp/porchpg:latest; }
 porchpg () { PGPASSWORD=porch123 psql -h localhost -p 5432 -U postgres; }
-runboolegdw () { podman run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
+runboolegdw () { docker run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
 bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
 export NVM_DIR="$HOME/.nvm"
@@ -56,4 +57,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source "$HOME/.cargo/env"
+
+alias auth-fetcher='docker run -p4444:4444 --rm gcr.io/porch-gcp/auth-fetcher:latest -env=prod -url=false'
+
