@@ -60,3 +60,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 alias auth-fetcher='docker run -p4444:4444 --rm gcr.io/porch-gcp/auth-fetcher:latest -env=prod -url=false'
 
+. "$HOME/.cargo/env"

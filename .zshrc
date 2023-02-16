@@ -4,7 +4,11 @@ export NODE_ENV=development
 export EDITOR=vim
 REL_NODE_PATH=./node_modules/.bin
 
-export PATH=$PATH:$REL_NODE_PATH:~/bin:~/bin/sbt/bin
+export RUSTBIN=$HOME/.cargo/bin
+export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
+export KAFKABIN=$HOME/bin/kafka_2.13-3.4.0/bin
+
+export PATH=$PATH:$REL_NODE_PATH:$RUSTBIN:$PGBIN:$KAFKABIN:~/bin:
 echo "$USER"
 
 for f in \
