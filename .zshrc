@@ -3,7 +3,7 @@ export CLICOLOR=1
 export NODE_ENV=development
 export EDITOR=vim
 REL_NODE_PATH=./node_modules/.bin
-
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 export RUSTBIN=$HOME/.cargo/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
 export KAFKABIN=$HOME/bin/kafka_2.13-3.4.0/bin
@@ -36,6 +36,7 @@ setopt prompt_subst
 PROMPT='%~(${vcs_info_msg_0_})$ '
 zstyle ':vcs_info:git:*' formats '%b'
 
+setopt share_history
 
 
 # The next line updates PATH for the Google Cloud SDK.
