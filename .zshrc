@@ -37,9 +37,6 @@ PROMPT='%~(${vcs_info_msg_0_})$ '
 zstyle ':vcs_info:git:*' formats '%b'
 
 setopt inc_append_history
-# vi key binding
-bindkey -v
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/nathanj/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathanj/bin/google-cloud-sdk/path.zsh.inc'; fi
