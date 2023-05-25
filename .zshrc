@@ -9,10 +9,7 @@ echo "$USER"
 
 for f in \
     "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh" \
-    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh" \
-    "/Users/$USER/code/psql-service-completion/psql-service-completion.bash" \
-    "/Users/$USER/code/google-cloud-sdk/path.bash.inc" \
-    "/Users/$USER/code/google-cloud-sdk/completion.bash.inc"; do
+    "/Users/$USER/code/psql-service-completion/psql-service-completion.bash" ; do
     if [ -f $f ]; then
         echo "source $f"
         source $f
@@ -22,3 +19,9 @@ done
 setopt PROMPT_SUBST ; PS1='%~$(__git_ps1 "(%s)")$ '
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nathan/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathan/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nathan/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathan/bin/google-cloud-sdk/completion.zsh.inc'; fi
