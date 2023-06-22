@@ -14,8 +14,7 @@ echo "$USER"
 for f in \
     "/Users/$USER/.secrets" \
     "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh" \
-    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh" \
-    "/Users/$USER/code/psql-service-completion/psql-service-completion.bash"; do
+    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh"; do
     if [ -f $f ]; then
         echo "source $f"
         source $f
@@ -27,8 +26,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-autoload -Uz compinit && compinit
+# Load command completion scripts
+fpath=(/Users/$USER/code/psql-service-completion-zsh $fpath)
+autoload -Uz compinit && compinit -D
 autoload -Uz vcs_info
+
+
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
@@ -47,3 +50,4 @@ if [ -f '/Users/nathanj/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
