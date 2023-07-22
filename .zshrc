@@ -8,8 +8,7 @@ export PATH=$PATH:$REL_NODE_PATH
 echo "$USER"
 
 for f in \
-    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh" \
-    "/Users/$USER/code/psql-service-completion/psql-service-completion.bash" ; do
+    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"; do
     if [ -f $f ]; then
         echo "source $f"
         source $f
