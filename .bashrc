@@ -49,10 +49,6 @@ porchpg () { PGPASSWORD=porch123 psql -h localhost -p 5432 -U postgres; }
 runboolegdw () { docker run --rm -ti --name bootlegdw -p 5430:5432 gcr.io/porch-gcp/bootleg-dw:latest; }
 bootlegdw () { PGPASSWORD=bootleg_dw psql -U bootleg_dw -d bootleg_dw -h localhost -p 5430; }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
