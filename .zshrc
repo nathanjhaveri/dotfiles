@@ -7,8 +7,9 @@ export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 export RUSTBIN=$HOME/.cargo/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
 export KAFKABIN=$HOME/bin/kafka_2.13-3.4.0/bin
+export INTELLIJBIN="/Applications/IntelliJ IDEA CE 2024.app/Contents/MacOS"
 
-export PATH=$PATH:$REL_NODE_PATH:$RUSTBIN:$PGBIN:$KAFKABIN:~/bin:
+export PATH=$PATH:$REL_NODE_PATH:$RUSTBIN:$PGBIN:$KAFKABIN:$INTELLIJBIN:~/bin:
 echo "$USER"
 
 for f in \
@@ -22,13 +23,14 @@ for f in \
 done
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # Load command completion scripts
 fpath=(/Users/$USER/code/psql-service-completion-zsh $fpath)
-autoload -Uz compinit && compinit -D
+
+autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 
 
