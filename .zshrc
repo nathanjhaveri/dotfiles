@@ -30,7 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 # Load command completion scripts
 fpath=(/Users/$USER/code/psql-service-completion-zsh $fpath)
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -D
 autoload -Uz vcs_info
 
 
@@ -52,4 +52,6 @@ if [ -f '/Users/nathanj/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export DEVELOPER_SERVICE_ACCOUNT=nathanj@porch.com
 
