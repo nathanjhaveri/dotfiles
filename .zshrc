@@ -7,7 +7,7 @@ export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 export RUSTBIN=$HOME/.cargo/bin
 export PGBIN=/Applications/Postgres.app/Contents/Versions/latest/bin
 export KAFKABIN=$HOME/bin/kafka_2.13-3.4.0/bin
-export INTELLIJBIN="/Applications/IntelliJ IDEA CE 2024.app/Contents/MacOS"
+export INTELLIJBIN="/Applications/IntelliJ IDEA CE.app/Contents/MacOS"
 
 export PATH=$PATH:$REL_NODE_PATH:$RUSTBIN:$PGBIN:$KAFKABIN:$INTELLIJBIN:~/bin:
 echo "$USER"
@@ -54,4 +54,22 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export DEVELOPER_SERVICE_ACCOUNT=nathanj@porch.com
+
+gar-auth() {
+  local TOKEN
+  TOKEN=$(gcloud auth print-access-token)
+
+  cat > ~/.npmrc.gar <<EOF
+@porch:registry=https://us-central1-npm.pkg.dev/dev-tools-194000/porch-npm-internal/
+registry=https://us-central1-npm.pkg.dev/dev-tools-194000/porch-npm-internal/
+//us-central1-npm.pkg.dev/:_authToken=${TOKEN}
+EOF
+
+  echo "[GAR AUTH DONE] Token updated in ~/.npmrc.gar"
+}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+alias npm="$HOME/bin/npm-wrapper.sh"
 
